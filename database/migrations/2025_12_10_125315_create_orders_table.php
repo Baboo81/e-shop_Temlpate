@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');//Relie la commande à un utilisateur connecté
+            $table->json('items');//Stocke le panier complet
+            $table->decimal('total', 8, 2);
             $table->timestamps();
         });
     }
