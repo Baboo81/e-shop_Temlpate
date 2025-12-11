@@ -6,15 +6,15 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Route;
 
-///////////////////////////
-// PAGE D’ACCUEIL
+////////////////////////////
+// PAGE D’ACCUEIL        //
 ///////////////////////////
 Route::get('/home', function () {
     return view('home'); // home.blade.php
 })->name('home');
 
-///////////////////////////
-// MINI-SHOP
+////////////////////////////
+// MINI-SHOP             //
 ///////////////////////////
 
 // Liste des produits
@@ -33,9 +33,16 @@ Route::post('/order', [OrderController::class, 'store'])
     ->middleware('auth')
     ->name('order.store');
 
+////////////////////////////
+//        CRUD            //
 ///////////////////////////
-// DASHBOARD & PROFIL (auth)
-///////////////////////////
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::resource('products', \App\Http\Controllers\Admin\ProductController::class);
+});
+
+///////////////////////////////
+// DASHBOARD & PROFIL (auth)//
+/////////////////////////////
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
@@ -46,7 +53,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-///////////////////////////
-// ROUTES BREEZE (auth, login, register, forgot password…)
-///////////////////////////
+////////////////////////////////////////////////////////////
+// ROUTES BREEZE (auth, login, register, forgot password…)//
+////////////////////////////////////////////////////////////
 require __DIR__.'/auth.php';
