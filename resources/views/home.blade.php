@@ -1,29 +1,34 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container py-5">
-
+<section class="row banner">
+    <div class="overlay"></div>
+    <div class="content">
+        <h1 class="text-center">Sensei BonsaiKa</h1>
+    </div>
+</section>
+<div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
 
             <div class="card shadow-sm">
                 <div class="card-body text-center py-5">
 
-                    <h1 class="mb-4">Bienvenue sur la Home ✨</h1>
+                    <h1 class="mb-4">Bienvenue chez Sensei BonsaiKa</h1>
 
                     @auth
-                        <p class="fs-5">
-                            Ravie de te revoir, <strong>{{ Auth::user()->name }}</strong> !
-                        </p>
-                        <a href="{{ route('dashboard') }}" class="btn btn-primary mt-3">
-                            Aller au Dashboard
-                        </a>
+                    <p class="fs-5">
+                        Ravie de te revoir, <strong>{{ Auth::user()->name }}</strong> !
+                    </p>
+                    <a href="{{ route('dashboard') }}" class="btn btn-primary mt-3">
+                        Aller au Dashboard
+                    </a>
                     @else
-                        <p class="fs-5">
-                            Bienvenue ! Vous pouvez vous connecter ou créer un compte pour accéder à plus de contenu.
-                        </p>
-                        <a href="{{ route('login') }}" class="btn btn-outline-primary me-2">Se connecter</a>
-                        <a href="{{ route('register') }}" class="btn btn-primary">Créer un compte</a>
+                    <p class="fs-5">
+                        Bienvenue ! Vous pouvez vous connecter ou créer un compte pour accéder à plus de contenu.
+                    </p>
+                    <a href="{{ route('login') }}" class="btn btn-outline-primary me-2">Se connecter</a>
+                    <a href="{{ route('register') }}" class="btn btn-primary">Créer un compte</a>
                     @endauth
 
                 </div>
