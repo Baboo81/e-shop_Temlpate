@@ -17,6 +17,9 @@ Route::get('/home', function () {
 // MINI-SHOP             //
 ///////////////////////////
 
+//Search Zone
+Route::get('/products', [ProductController::class, 'index'])->name('products.index');
+
 // Liste des produits
 Route::get('/', [ProductController::class, 'index'])->name('products.index');
 

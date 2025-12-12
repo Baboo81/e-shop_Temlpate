@@ -2,7 +2,7 @@
     <div class="container-fluid">
 
         {{-- Logo / Home --}}
-        <a class="navbar-brand" href="{{ route('home') }}">Home</a>
+        <a class="navbar-brand" href="{{ route('home') }}">Sensei BonsaiKa</a>
 
         {{-- Mobile toggler --}}
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
