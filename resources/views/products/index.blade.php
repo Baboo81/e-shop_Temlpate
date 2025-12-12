@@ -6,7 +6,7 @@
     <h1 class="mb-5 text-center fw-bold">Notre Boutique</h1>
     {{-- Search Zone --}}
     <div class="row">
-        <form action="{{ route('products.index') }}" method="GET" class="search-bar my-5">
+        <form action="{{ route('products.search') }}" method="GET" class="search-bar my-5">
             <div class="input-group position-relative">
                 <i class="bi bi-search"
                     style="position:absolute; top:50%; left:10px; transform:translateY(-50%); color:#777; z-index: 5;"></i>
@@ -16,31 +16,6 @@
         </form>
     </div>
     {{-- Search Zone END --}}
-
-    {{-- Résultat : recherche --}}
-    <div class="row mt-4">
-        @forelse ($products as $product)
-        <div class="col-md-3 mb-4">
-            {{-- Ta card produit --}}
-            <div class="card h-100">
-                <img src="{{ $product->image }}" class="card-img-top" alt="{{ $product->name }}">
-                <div class="card-body">
-                    <h5 class="card-title">{{ $product->name }}</h5>
-                    <p class="card-text">{{ $product->description }}</p>
-                </div>
-            </div>
-        </div>
-        @empty
-        <div class="col-12 text-center py-5">
-            <p>Aucun produit trouvé…</p>
-        </div>
-        @endforelse
-    </div>
-
-    <div class="mt-4">
-        {{ $products->links() }}
-    </div>
-    {{-- Résultat : recherche END --}}
 
     <div class="row g-4">
 

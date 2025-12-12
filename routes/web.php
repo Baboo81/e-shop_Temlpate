@@ -18,7 +18,7 @@ Route::get('/home', function () {
 ///////////////////////////
 
 //Search Zone
-Route::get('/products', [ProductController::class, 'index'])->name('products.index');
+Route::get('/products', [ProductController::class, 'search'])->name('products.search');
 
 // Liste des produits
 Route::get('/', [ProductController::class, 'index'])->name('products.index');

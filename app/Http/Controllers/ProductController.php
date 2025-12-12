@@ -14,22 +14,39 @@ class ProductController extends Controller
      */
     public function index(Request $request)
     {
-        //Serach bar
-        if ($request->filled('search')) {
-            $search = $request->input('search');
-
-            $products = Product::where('name', 'LIKE', "%{$search}%")
-                               ->orWhere('description', 'LIKE', "%{$search}%")
-                               ->paginate(12)
-                               ->appends(['search' => $search]);
-        } else {
-            // Paginator vide
-            $products = new LengthAwarePaginator([], 0, 12);
-        }
 
         $products = Product::all();
         return view('products.index', compact('products'));
     }
+
+    /**
+     * Search Zone
+     */
+    public function search(Request $request)
+    {
+        //Serach bar
+
+        // Vérifie si l'utilisateur a tapé quelque chose
+        if ($request->filled('search')) {
+            $search = $request->input('search');
+
+            // On cherche le premier produit correspondant
+            $product = Product::where('name', 'LIKE', "%{$search}%")
+                              ->orWhere('description', 'LIKE', "%{$search}%")
+                              ->first();
+
+            if ($product) {
+                // Redirige directement vers la page show
+                return redirect()->route('products.show', $product->id);
+            } else {
+                // Aucun produit trouvé, retourne sur la page de recherche avec un message
+                return back()->with('error', 'Aucun produit trouvé pour votre recherche.');
+            }
+        }
+        //Si l'utilisateur n'a rien tapé, on retourne sur la page d'index
+        return redirect()->route('products.index');
+    }
+
 
     /**
      * Affiche un seul produit (fiche produit)
