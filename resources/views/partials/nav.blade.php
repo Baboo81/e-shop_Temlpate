@@ -1,8 +1,10 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg bg-transparent fixed-top">
     <div class="container-fluid">
 
         {{-- Logo / Home --}}
-        <a class="navbar-brand" href="{{ route('home') }}">Sensei BonsaiKa</a>
+        <a class="navbar-brand" href="{{ route('home') }}">
+            <img src="{{ asset('assets/img/svg/logo_blanc.svg') }}" alt="Logo représentant un bonsai" class="logo-nav">
+        </a>
 
         {{-- Mobile toggler --}}
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"

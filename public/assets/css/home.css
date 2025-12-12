@@ -4,11 +4,31 @@
     --vertP : #8ACB3B;
     --vertS : #1F3D00;
     --beige : #F4F1DC;
+    --gris : #495057;
+}
+
+@font-face
+{
+  font-family: 'Dastin';
+  src : url('../fonts/Dastin.otf') format('opentype'),
+        url('../fonts/Dastin.ttf') format('trutype'),
+        url('../fonts/Dastin.woff') format('woff'),
+        url('../fonts/Dastin.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
 html, body
 {
-    background-color: var(--beige);
+    background-color: var(--gris);
+    font-family: 'Dastin';
+}
+
+.mainTitle
+{
+    color: var(--vertP) !important;
+    font-size: 6rem !important;
 }
 
 .banner {

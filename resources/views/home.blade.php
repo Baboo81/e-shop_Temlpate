@@ -4,14 +4,14 @@
 <section class="row banner">
     <div class="overlay"></div>
     <div class="content">
-        <h1 class="text-center">Sensei BonsaiKa</h1>
+        <h1 class="mainTitle text-center">Sensei BonsaiKa</h1>
     </div>
 </section>
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-4 p-5">
 
-            <div class="card shadow-sm">
+            <div class="card shadow-sm rounded-5">
                 <div class="card-body text-center py-5">
 
                     <h1 class="mb-4">Bienvenue chez Sensei BonsaiKa</h1>

@@ -1,3 +1,24 @@
+:root
+{
+    --vertF : #556B2F;
+    --vertP : #8ACB3B;
+    --vertS : #1F3D00;
+    --beige : #F4F1DC;
+    --gris : #495057;
+}
+
+
+
+h1
+{
+    color: var(--vertP);
+}
+
+.search-bar
+{
+    padding: 0 150px;
+}
+
 .search-bar input
 {
     height: 3rem;

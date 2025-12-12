@@ -1,0 +1,27 @@
+:root
+{
+    --vertF : #556B2F;
+    --vertP : #8ACB3B;
+    --vertS : #1F3D00;
+    --beige : #F4F1DC;
+    --gris : #495057;
+}
+
+
+.navbar .nav-link
+{
+    color: aliceblue;
+    font-size: 2rem;
+}
+
+.navbar .nav-link.active,
+.navbar .nav-link.active:hover
+{
+    color: var(--vertP);
+    font-weight: 500;
+}
+
+.navbar .logo-nav
+{
+    height: 7rem;
+}
