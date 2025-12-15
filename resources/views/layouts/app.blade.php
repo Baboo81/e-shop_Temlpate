@@ -23,6 +23,8 @@
 
     <!-- Styles spécifiques à une page -->
     @yield('styles')
+
+    @stack('scripts')
 </head>
 <body class="">
     <div class="">
