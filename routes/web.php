@@ -28,7 +28,7 @@ Route::get('/products/{product}', [ProductController::class, 'show'])->name('pro
 
 // Panier
 Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
-Route::get('/cart/add/{product}', [CartController::class, 'add'])->name('cart.add');
+Route::post('/cart/add/{product}', [CartController::class, 'add'])->name('cart.add');
 Route::get('/cart/remove/{product}', [CartController::class, 'remove'])->name('cart.remove');
 
 // Passer une commande (auth seulement)

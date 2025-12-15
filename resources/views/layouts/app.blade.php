@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/home.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/products/index.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/cart/index.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/nav.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/footer.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/libs/aos/aos.css') }}">
